@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My JS</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="icetu-logo.png" type="image/x-icon">
+<script src="js/script.js"></script>
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div id="banner" class="top_banner">
+      <h1 id="wel-title" style="margin-top: 5%;">My JavaScript Basic Project</h1>
+      <p id="wel-dis">Oh my name is abolfazl effati</p>
+    </div>
+	
+
+  </div>
+
+  <div id="page_content"> 
+    
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <div class="box">
+          <button id="PageMode" onclick="lightmode()">Turn On Light Mode</button>
+          <br>
+          <button id="clock" onload="clock()">Clock</button>
+          <br>
+          <button id="login-for-more" onclick="">Text for test lightmode();</button>
+        </div>
+      </div>
+
+      <div class="col_1">
+        <div class="box">
+          <form id="loginform">
+            <label for="username-text">Username : </label>
+            <input type="text" class="txtbox-login" id="username">
+            <br>
+            <br>
+            <label for="password-text">Password : </label>
+            <input type="password" class="txtbox-login" id="password">
+          </form>
+          <div id="login-btns">
+            <br>
+            <button id="login-btn" onclick="login()">Login</button>
+            <br>
+            <button id="signup-btn" onclick="">Sign Up</button>
+          </div>
+          <div class="after-login">
+            <p id="username-show">aa</p>
+            <p id="level-show">aa</p>
+            <p id="date-show">aa</p>
+            <button id="signout-btn" onclick="signout()">Sign Out</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+        <h2>What is the purpose of this page?</h2>
+        <hr>
+        <p>
+          This page contains an exercise project for beginner JavaScript exam for university written by abolfazl effati.
+        </p>
+        <p>Username For Login : abolfazleffati</p>
+        <p>Password For Login : 1234</p>
+        </div>
+      <div class="top_content">
+        <div class="column_one">
+          <h2>Guess Number Game</h2>
+          <p>In this game you enter a numerical range. Then the computer will try to guess your number and if it fails you will win the game.</p>
+          <br>
+          <p><a class="btn" id="myBtn2"  >Start Game</a></p>
+        </div>
+        <div class="column_two border_left">
+          <h2>Very Simple Calculator</h2>
+          <p>With the key on the show button, a simple box opens and you can work there with a very simple calculator.</p>
+          <br>
+          <p><a class="btn" id="myBtn" >Show</a></p></div>
+      </div>
+    
+    </div>
+
+    <div class="clear"></div>
+    
+      <div id="footer">Abolfazl Effati &copy; github.com/s19mee.</a><br>
+    
+    </div>
+
+
+
+  </div>
+
+</div>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span id="calculatorclose" class="close">&times;</span>
+    
+    <div id="main-for-action">
+      <form id="frm-to">
+        <label for="num1">Number One : </label>
+        <input class="textbox-login" type="text" id="num1">
+        <br>
+        <br>
+        <label for="operator">Operator :</label>
+        <select class="textbox-login" id="operator">
+          <option value="sum">+</option>
+          <option value="min">-</option>
+          <option value="multi">*</option>
+          <option value="divis">\</option>
+          <option value="undivis">%</option>
+        </select>
+        <br>
+        <br>
+        <label for="num2">Number Two : </label>
+        <input class="textbox-login" type="text" id="num2">
+        <br>
+        <br>
+        <input type="button" id="es" value="Print" onclick="Calculator()">
+        <br>
+        <br>
+      </form>
+      <p id="result"></p>
+    </div>
+
+  </div>
+
+  
+
+</div>
+
+<div id="myModal2" class="modal">
+
+  <div class="modal-content">
+    <span id="gameclose" class="close">&times;</span>
+    <p><a href="pages/game.html" class="btn">Move to game page.</a></p>
+    </div>
+
+  </div>
+
+  
+
+</div>
+
+</body>
+
+<script>
+  clock();
+  lightmode();
+  modalShow('myModal','myBtn','calculatorclose');
+  modalShow('myModal2','myBtn2','gameclose');
+</script>
+</html>

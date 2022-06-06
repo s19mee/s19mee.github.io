@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="starting-number-textbox">Your Starting number : </label>
+    <input id="starting-number-textbox" type="text">
+    <br>
+    <br>
+    <label for="end-number-textbox">Your End number : </label>
+    <input id="end-number-textbox" type="text">
+    <p id="ww"></p>
+    <button onclick="startgame()">Start Game</button>
+    <br>
+    <br>
+    <hr>
+    <div id="myDIV">
+    <p id="res">> Show Results After Start Game.</p>
+    <button id="s" onclick="samller()">Smaller than the my number</button>
+    <button id="y" onclick="yes()">Yes , It's my number</button>
+    <button id="l" onclick="lager()">Lager than my number</button>
+    </div>
+</body>
+
+<script>
+    var x = document.getElementById("myDIV");
+    x.style.display = "none";
+
+    let guess;
+    let old_guess;
+    let i = 1;
+    let starting_number;
+    let end_number;
+
+    function startgame(){
+        starting_number = parseInt(document.getElementById("starting-number-textbox").value);
+        end_number = parseInt(document.getElementById("end-number-textbox").value) + 1;
+        result = null;
+        if(starting_number != NaN && end_number != NaN){
+            x.style.display = "block"
+            guess = Math.floor(Math.random() * (end_number - starting_number) + starting_number);
+            document.getElementById("res").innerHTML = guess
+        }
+    }
+
+    function samller(){
+        if(i <= 5){
+            old_guess = guess;
+            starting_number = guess;
+            guess = Math.floor(Math.random() * (end_number - starting_number) + starting_number);
+            if(guess != old_guess){
+                document.getElementById("res").innerHTML = guess
+                i++;
+            }
+            else{
+                guess = Math.floor(Math.random() * (end_number - starting_number) + starting_number);
+                document.getElementById("res").innerHTML = guess
+                i++;
+            }
+        }
+        else{
+            alert("You Win");
+            location.reload();
+        }
+        
+    }
+
+    function yes(){
+        alert("You Lost");
+        location.reload();
+    }
+
+    function lager(){
+       if(i <= 5){
+        old_guess = guess;
+        end_number = guess;
+        end_number += 1;
+        guess = Math.floor(Math.random() * (end_number - starting_number) + starting_number);
+        if(guess != old_guess){
+            document.getElementById("res").innerHTML = guess
+            i++;
+        }
+        else{
+            guess = Math.floor(Math.random() * (end_number - starting_number) + starting_number);
+            document.getElementById("res").innerHTML = guess
+            i++;
+        }
+       }
+       else{
+            alert("You Win");
+            location.reload();
+        }
+    }
+</script>
+</html>
